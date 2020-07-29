@@ -15,17 +15,16 @@ class buku extends Seeder
     public function run()
     {
         $faker = Faker::create('bk');
-        $user = [];
-        $user_info =[];
+        $buku = [];
         for ($i=1; $i <=10 ; $i++) { 
-            $user[] = [
-                'bk' => Str::random(5),
-                'nama_buku' =>$faker->name(),
-                'penerbit' =>$faker->text(),
-                'penulis' =>$faker->text(),
+            $buku[] = [
+                'kb' => Str::random(5),
+                'nama_buku' => 'Buku '.$i,
+                'penerbit' =>$faker->text(25),
+                'penulis' =>$faker->text(50),
 
             ];
         }
-
+        DB::table('buku')->insert($buku);
     }
 }

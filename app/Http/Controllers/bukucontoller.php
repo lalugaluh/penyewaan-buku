@@ -24,7 +24,7 @@ class bukucontoller extends Controller
     public function store(Request $request)
     {
         $buku = [
-            'bk' => str::random(5),
+            'kb' => str::random(5),
             'nama_buku' => $request->nama_buku,
             'penerbit' => $request->penerbit,
             'penulis' => $request->penulis,
@@ -43,7 +43,7 @@ class bukucontoller extends Controller
     public function edit($id)
     {
     }
-    public function update(Request $request, $bk)
+    public function update(Request $request, $kb)
     {
         $buku = [];
         if (isset($request->buku)) {
@@ -53,8 +53,8 @@ class bukucontoller extends Controller
                 if (isset($request->penulis)) {
                     $buku['penulis'] = $request->penulis;
                     try {
-                        DB::table('buku')->where('bk', $bk)->update($buku);
-                        return response(['message' => 'berhasil memperbarui buku dengan bk' . $bk]);
+                        DB::table('buku')->where('kb', $kb)->update($buku);
+                        return response(['message' => 'berhasil memperbarui buku dengan Kode' . $kb]);
                     } catch (\Throwable $th) {
                         return response(['message' => 'terjadi kesalahan','eror' . $th],500);
                     }
@@ -62,10 +62,10 @@ class bukucontoller extends Controller
             }
         }
     }
-        public function destroy($bk){
+        public function destroy($kb){
             try {
-                DB::table('buku')->where('bk',$bk)->delete();
-                 return response(['message' => 'berhasil memperbarui buku dengan bk' . $bk]);
+                DB::table('buku')->where('kb',$kb)->delete();
+                 return response(['message' => 'berhasil memperbarui buku dengan Kode' . $kb]);
             } catch (\Throwable $th) {
             return response(['message' => 'terjadi kesalahan','eror' => $th],500);
             }

@@ -15,18 +15,18 @@ class User extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
             $table->string('id',5)->primary();
-            $table->string('name_lengkap',25);
+            $table->string('name_lengkap',50);
             $table->enum('jenis kelamin', ['L','P']);
             $table->string('email',50);
-            $table->string('alamat', 50);
+            $table->string('alamat', 350);
 
             
         });
 
         Schema::create('buku', function (Blueprint $table) {
             $table->string('kb', 5)->primary();
-            $table->string('nama_buku', 25);
-            $table->string('penerbit', 25);
+            $table->string('nama_buku', 125);
+            $table->string('penerbit', 50);
             $table->string('penulis', 50);
         });
 
@@ -40,6 +40,6 @@ class User extends Migration
     public function down()
     {
         Schema::dropIfExists('user');
-        Schema::dropIfExists('kamera');
+        Schema::dropIfExists('buku');
     }
 }

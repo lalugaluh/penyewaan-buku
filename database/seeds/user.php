@@ -14,17 +14,17 @@ class user extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('bk');
+        $faker = Faker::create('id_ID');
         $user = [];
-        $user_info = [];
         for ($i = 1; $i <= 10; $i++) {
             $user[] = [
                 'id' => Str::random(5),
-                'name_lengkap' => $faker->name(),
-                'jenis_kelamin' => 'L',
+                'name_lengkap' => $faker->name(50),
+                'jenis kelamin' => 'L',
                 'alamat' => $faker->address(),
-
+                'email' => $faker->email()
             ];
         }
+        DB::table('user')->insert($user);
     }
 }
