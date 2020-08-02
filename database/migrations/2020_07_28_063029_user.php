@@ -14,22 +14,19 @@ class User extends Migration
     public function up()
     {
         Schema::create('user', function (Blueprint $table) {
-            $table->string('id',5)->primary();
-            $table->string('name_lengkap',25);
-            $table->enum('jenis kelamin', ['L','P']);
-            $table->string('email',50);
+            $table->string('id', 5)->primary();
+            $table->string('name_lengkap', 25);
+            $table->enum('jenis kelamin', ['L', 'P']);
+            $table->string('email', 150);
             $table->string('alamat', 50);
-
-            
         });
 
         Schema::create('buku', function (Blueprint $table) {
             $table->string('kb', 5)->primary();
             $table->string('nama_buku', 25);
-            $table->string('penerbit', 25);
+            $table->string('penerbit', 250);
             $table->string('penulis', 50);
         });
-
     }
 
     /**

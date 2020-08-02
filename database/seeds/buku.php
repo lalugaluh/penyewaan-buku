@@ -20,7 +20,7 @@ class buku extends Seeder
             $buku[] = [
                 'kb' => Str::random(5),
                 'nama_buku' => 'Buku ' . $i,
-                'penerbit' => $faker->company(),
+                'penerbit' => $faker->company(100),
                 'penulis' => $faker->name(),
             ];
         }
