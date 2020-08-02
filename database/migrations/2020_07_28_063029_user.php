@@ -36,7 +36,7 @@ class User extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('buku');
         Schema::dropIfExists('user');
-        Schema::dropIfExists('kamera');
     }
 }
