@@ -14,7 +14,7 @@ class user extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('bk');
+        $faker = Faker::create('id_ID');
         $user = [];
         $kelamin = ['L', 'P'];
         for ($i = 1; $i <= 10; $i++) {
