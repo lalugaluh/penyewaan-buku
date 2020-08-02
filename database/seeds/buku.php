@@ -18,9 +18,9 @@ class buku extends Seeder
         $buku = [];
         for ($i = 1; $i <= 10; $i++) {
             $buku[] = [
-                'bk' => Str::random(5),
-                'nama_buku' => $faker->name(),
-                'penerbit' => $faker->company(),
+                'kb' => Str::random(5),
+                'nama_buku' => 'Buku ' . $i,
+                'penerbit' => $faker->company(150),
                 'penulis' => $faker->name(),
             ];
         }
