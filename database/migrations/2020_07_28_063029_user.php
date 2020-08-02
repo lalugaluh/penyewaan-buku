@@ -16,7 +16,7 @@ class User extends Migration
         Schema::create('user', function (Blueprint $table) {
             $table->string('id', 5)->primary();
             $table->string('name_lengkap', 25);
-            $table->enum('jenis kelamin', ['L', 'P']);
+            $table->enum('jenis_kelamin', ['L', 'P']);
             $table->string('email', 150);
             $table->string('alamat', 50);
         });
