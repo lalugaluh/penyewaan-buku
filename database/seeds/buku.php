@@ -18,11 +18,10 @@ class buku extends Seeder
         $buku = [];
         for ($i = 1; $i <= 10; $i++) {
             $buku[] = [
-                'bk' => Str::random(5),
-                'nama_buku' => $faker->name(),
+                'kb' => Str::random(5),
+                'nama_buku' => 'Buku ' . $i,
                 'penerbit' => $faker->company(),
                 'penulis' => $faker->name(),
-
             ];
         }
         DB::table('buku')->insert($buku);
