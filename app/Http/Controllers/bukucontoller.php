@@ -12,13 +12,13 @@ class bukucontoller extends Controller
 {
     public function index()
     {
-
+        return 'OK';
         $result = DB::table('buku')->get();
         return response($result);
     }
     function getByid($bk)
     {
-        return response(DB::table('buku')->where('bk', $bk)->get());
+        return response(DB::table('buku')->where('kb', $bk)->get());
     }
 
     public function store(Request $request)
