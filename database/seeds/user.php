@@ -16,15 +16,15 @@ class user extends Seeder
     {
         $faker = Faker::create('bk');
         $user = [];
-        $user_info = [];
+        $kelamin = ['L', 'P'];
         for ($i = 1; $i <= 10; $i++) {
             $user[] = [
                 'id' => Str::random(5),
                 'name_lengkap' => $faker->name(),
-                'jenis_kelamin' => 'L',
+                'jenis_kelamin' => $kelamin[rand(0, 1)],
                 'alamat' => $faker->address(),
-
             ];
         }
+        DB::table('user')->insert($user);
     }
 }
