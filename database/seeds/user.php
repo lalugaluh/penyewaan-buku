@@ -23,6 +23,7 @@ class user extends Seeder
                 'name_lengkap' => $faker->name(),
                 'jenis_kelamin' => $kelamin[rand(0, 1)],
                 'alamat' => $faker->address(100),
+                'email' => 'user' . $i . '@gmail.com'
             ];
         }
         DB::table('user')->insert($user);
