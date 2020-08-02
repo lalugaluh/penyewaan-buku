@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 
 */
 
-Route::resources(['buku' => 'bukucontroller', 'user' => 'usercontroller']);
+Route::resources(['buku' => 'bukucontoller', 'user' => 'usercontoller']);

@@ -12,7 +12,6 @@ class bukucontoller extends Controller
 {
     public function index()
     {
-        return 'OK';
         $result = DB::table('buku')->get();
         return response($result);
     }
