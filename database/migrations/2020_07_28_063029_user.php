@@ -18,7 +18,7 @@ class User extends Migration
             $table->string('name_lengkap', 25);
             $table->enum('jenis_kelamin', ['L', 'P']);
             $table->string('email', 150);
-            $table->string('alamat', 50);
+            $table->string('alamat', 250);
         });
 
         Schema::create('buku', function (Blueprint $table) {
